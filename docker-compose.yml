@@ -1,0 +1,46 @@
+version: '3.7'
+
+services:
+  odoo:
+    image: odoo:16
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      HOST: db
+      USER: "odoo"
+      PASSWORD: "odoo"
+    ports:
+      - 8069:8069
+    volumes:
+      - ./odoo/odoo.conf:/etc/odoo/odoo.conf:ro
+      - ./odoo/data:/var/lib/odoo
+      - ./odoo/enterprise:/mnt/enterprise-addons
+      - ./odoo/extra:/mnt/extra-addons
+
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "odoo"
+      POSTGRES_PASSWORD: "odoo"
+      POSTGRES_USER: "odoo"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - postgres:/var/lib/postgresql/data/pgdata
+      - ./postgres/run.sh:/opt/run.sh:ro
+
+  adminer:
+    image: adminer:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      #ADMINER_PLUGINS: ""
+      ADMINER_DESIGN: pepa-linha
+      ADMINER_DEFAULT_SERVER: db
+    ports:
+      - 8080:8080
+
+volumes:
+  postgres:
