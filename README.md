@@ -4,9 +4,9 @@
         A boilerplate for Odoo application
         <br />
         <br />
-        <a href="https://github.com/jdebetaz/odoo-bolierplate/issues">Report Bug</a>
+        <a href="https://github.com/jdebetaz/odoo-boilerplate/issues">Report Bug</a>
         - 
-        <a href="https://github.com/jdebetaz/odoo-bolierplate/issues">Request Feature</a>
+        <a href="https://github.com/jdebetaz/odoo-boilerplate/issues">Request Feature</a>
     </p>
 </div>
 
@@ -15,7 +15,7 @@
 Clone the repo:
 
 ```bash
-git clone --depth 1 --branch main https://github.com/jdebetaz/odoo-bolierplate.git your-project-name
+git clone --depth 1 --branch main https://github.com/jdebetaz/odoo-boilerplate.git your-project-name
 cd your-project-name
 ```
 
