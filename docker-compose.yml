@@ -28,7 +28,6 @@ services:
       PGDATA: "/var/lib/postgresql/data/pgdata"
     volumes:
       - postgres:/var/lib/postgresql/data/pgdata
-      - ./postgres/run.sh:/opt/run.sh:ro
 
   adminer:
     image: adminer:latest
