@@ -1,1 +1,4 @@
 .DS_Store
+odoo/data/*
+odoo/enterprise/*
+odoo/extra/*
